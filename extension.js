@@ -5,7 +5,7 @@ import * as OverviewControls from 'resource:///org/gnome/shell/ui/overviewContro
 export default class DoubleClickApps extends Extension {
     enable() {
         this._doubleClickGesture = new Clutter.ClickGesture();
-        this._doubleClickGesture.set_n_clicks_required(2)
+        this._doubleClickGesture.set_n_clicks_required(2);
 
         this._doubleClickGesture.connect('recognize', () => {
           if (Main.overview.visible) {

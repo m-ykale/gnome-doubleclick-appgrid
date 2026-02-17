@@ -5,6 +5,7 @@
   "url": "https://github.com/jordanbrotherton/gnome-doubleclick-appgrid",
   "version": 2,
   "shell-version": [
-    "49"
+    "49",
+    "50"
   ]
 }
