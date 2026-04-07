@@ -16,12 +16,14 @@ export default class DoubleClickApps extends Extension {
               Main.overview.show(OverviewControls.ControlsState.APP_GRID);
           }
         });
-        Main.panel.statusArea['dateMenu']?.add_action(this._doubleClickGesture);
+        this._overviewShowId = Main.overview.connect('showing', () => {
+            Main.overview.searchEntry?.add_action(this._doubleClickGesture);
+        });
     }
 
     disable() {
         if (this._doubleClickGesture) {
-            Main.panel.statusArea['dateMenu']?.remove_action(this._doubleClickGesture);
+            Main.overview.searchEntry?.remove_action(this._doubleClickGesture);
             delete this._doubleClickGesture;
         }
     }
